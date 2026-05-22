@@ -11,7 +11,7 @@ public class CasoList
         _alumnos.Add(alumno);
     }
 
-    public List<Alumno> ObtenerAlumnos()
+    public IEnumerable<Alumno> ObtenerAlumnos()
     {
         return _alumnos;
     }

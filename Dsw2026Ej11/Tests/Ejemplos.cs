@@ -11,8 +11,8 @@ internal class Ejemplos
 
         // Agregar 3 alumnos
         casoList.AgregarAlumno(new Alumno(1, "Lucas", 8.5));
-        casoList.AgregarAlumno(new Alumno(2, "María", 7.2));
-        casoList.AgregarAlumno(new Alumno(3, "Pedro", 6.0));
+        casoList.AgregarAlumno(new Alumno(2, "Ignacio", 7.2));
+        casoList.AgregarAlumno(new Alumno(3, "Thomas", 6.0));
 
         // Listar alumnos
         Console.WriteLine("=== Lista de alumnos ===");
@@ -20,8 +20,8 @@ internal class Ejemplos
             Console.WriteLine(a);
 
         // Buscar alumno que existe
-        Console.WriteLine("\n=== Buscar 'María' ===");
-        var encontrado = casoList.BuscarPorNombre("María");
+        Console.WriteLine("\n=== Buscar 'Ignacio' ===");
+        var encontrado = casoList.BuscarPorNombre("Ignacio");
         Console.WriteLine(encontrado != null ? encontrado.ToString() : "No existe");
 
         // Buscar alumno que no existe
@@ -30,8 +30,8 @@ internal class Ejemplos
         Console.WriteLine(noEncontrado != null ? noEncontrado.ToString() : "No existe");
 
         // Eliminar un alumno y listar
-        Console.WriteLine("\n=== Eliminar a Pedro ===");
-        casoList.EliminarAlumno(new Alumno(3, "Pedro", 6.0));
+        Console.WriteLine("\n=== Eliminar a Thomas ===");
+        casoList.EliminarAlumno(new Alumno(3, "Thomas", 6.0));
         foreach (var a in casoList.ObtenerAlumnos())
             Console.WriteLine(a);
 
@@ -46,27 +46,27 @@ internal class Ejemplos
     {
         CasoDictionary casoDictionary = new CasoDictionary();
 
-       
-        casoDictionary.AgregarAlumno(new Alumno(1, "Lucas", 8.9));
-        casoDictionary.AgregarAlumno(new Alumno(2, "Ignacio", 7.8));
-        casoDictionary.AgregarAlumno(new Alumno(3, "Thomas", 7.3));
+        // Agregar 3 alumnos
+        casoDictionary.AgregarAlumno(new Alumno(1, "Lucas", 8.5));
+        casoDictionary.AgregarAlumno(new Alumno(2, "Ignacio", 7.2));
+        casoDictionary.AgregarAlumno(new Alumno(3, "Thomas", 6.0));
 
-     
+        // Listar alumnos
         Console.WriteLine("=== Diccionario de alumnos ===");
         foreach (var par in casoDictionary.ObtenerDiccionario())
             Console.WriteLine($"Clave: {par.Key} - {par.Value}");
 
-      
+        // Buscar alumno que existe
         Console.WriteLine("\n=== Buscar clave 2 ===");
         var encontrado = casoDictionary.BuscarPorId(2);
         Console.WriteLine(encontrado != null ? encontrado.ToString() : "No existe");
 
-       
+        // Buscar alumno que no existe
         Console.WriteLine("\n=== Buscar clave 99 ===");
         var noEncontrado = casoDictionary.BuscarPorId(99);
         Console.WriteLine(noEncontrado != null ? noEncontrado.ToString() : "No existe");
 
-      
+        // Eliminar un alumno y listar
         Console.WriteLine("\n=== Eliminar clave 1 ===");
         casoDictionary.EliminarAlumno(1);
         foreach (var par in casoDictionary.ObtenerDiccionario())
